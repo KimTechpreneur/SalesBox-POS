@@ -41,10 +41,12 @@ export default function ProductsPage() {
         )}
 
         {/* Conditionally render ProductDetails when it's implemented */}
-        // @ts-ignore
+       
         {view === "details" && selectedProduct && (
+      // @ts-ignore
           <div>
-            <h2>{selectedProduct.name}</h2>
+  
+            <h2>{selectedProduct.name}</h2> 
             <p>{selectedProduct.description}</p>
             <p>{selectedProduct.price}</p>
             {/* Add more details as needed */}
