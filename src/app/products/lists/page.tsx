@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useState } from "react";
 import { ProductList } from "@/components/Products/List/ProductList";
@@ -42,14 +42,12 @@ export default function ProductsPage() {
 
         {/* Conditionally render ProductDetails when it's implemented */}
         {view === "details" && selectedProduct && (
-  <div>
-    <h2>{selectedProduct.name}</h2>
-    <p>{selectedProduct.description}</p>
-    <p>{selectedProduct.price}</p> {/* This should work now if price is defined in Product */}
-    <button onClick={handleBack}>Back to Products</button>
-  </div>
-)}
-
+          <div>
+            <h2>{selectedProduct.name}</h2>
+            <p>{selectedProduct.description}</p>
+            <p>{selectedProduct.price}</p> {/* Ensure price exists on Product type */}
+            <button onClick={handleBack}>Back to Products</button>
+          </div>
         )}
       </div>
     </DashboardLayout>
