@@ -42,13 +42,14 @@ export default function ProductsPage() {
 
         {/* Conditionally render ProductDetails when it's implemented */}
         {view === "details" && selectedProduct && (
-      
-          <div>
-            <h2>{selectedProduct?.name}</h2>
-            <p>{selectedProduct?.description}</p>
-            <p>{selectedProduct?.price}</p>
-            <button onClick={handleBack}>Back to Products</button>
-          </div>
+  <div>
+    <h2>{selectedProduct.name}</h2>
+    <p>{selectedProduct.description}</p>
+    <p>{selectedProduct.price}</p> {/* This should work now if price is defined in Product */}
+    <button onClick={handleBack}>Back to Products</button>
+  </div>
+)}
+
         )}
       </div>
     </DashboardLayout>
