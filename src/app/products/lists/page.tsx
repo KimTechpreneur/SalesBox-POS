@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from "react"
-import { ProductList } from "@/components/Products/List/ProductList"
-import { AddProduct } from "@/components/Products/Form/AddProduct"
+import { useState } from "react";
+import { ProductList } from "@/components/Products/List/ProductList";
+import { AddProduct } from "@/components/Products/Form/AddProduct";
 import { Product } from "@/types/product"; // Ensure this import matches the expected Product type
-import { DashboardLayout } from "@/components/Shared/Layout/DashboardLayout"
+import { DashboardLayout } from "@/components/Shared/Layout/DashboardLayout";
 
 export default function ProductsPage() {
   const [view, setView] = useState<"list" | "add" | "details">("list");
@@ -41,16 +41,14 @@ export default function ProductsPage() {
         )}
 
         {/* Conditionally render ProductDetails when it's implemented */}
-       
         {view === "details" && selectedProduct && (
-     // @ts-expect-error
-      <div>
-  <h2>{selectedProduct?.name}</h2>
-  <p>{selectedProduct?.description}</p>
-  <p>{selectedProduct?.price}</p>
-  <button onClick={handleBack}>Back to Products</button>
-</div>
-
+          // @ts-expect-error: `price` might be missing from `selectedProduct` temporarily during rendering
+          <div>
+            <h2>{selectedProduct?.name}</h2>
+            <p>{selectedProduct?.description}</p>
+            <p>{selectedProduct?.price}</p>
+            <button onClick={handleBack}>Back to Products</button>
+          </div>
         )}
       </div>
     </DashboardLayout>
