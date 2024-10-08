@@ -42,7 +42,7 @@ export default function ProductsPage() {
 
         {/* Conditionally render ProductDetails when it's implemented */}
         {view === "details" && selectedProduct && (
-          // @ts-expect-error: `price` might be missing from `selectedProduct` temporarily during rendering
+      
           <div>
             <h2>{selectedProduct?.name}</h2>
             <p>{selectedProduct?.description}</p>
