@@ -43,15 +43,14 @@ export default function ProductsPage() {
         {/* Conditionally render ProductDetails when it's implemented */}
        
         {view === "details" && selectedProduct && (
-      // @ts-ignore
-          <div>
-  
-            <h2>{selectedProduct.name}</h2> 
-            <p>{selectedProduct.description}</p>
-            <p>{selectedProduct.price}</p>
-            {/* Add more details as needed */}
-            <button onClick={handleBack}>Back to Products</button>
-          </div>
+     // @ts-expect-error
+      <div>
+  <h2>{selectedProduct?.name}</h2>
+  <p>{selectedProduct?.description}</p>
+  <p>{selectedProduct?.price}</p>
+  <button onClick={handleBack}>Back to Products</button>
+</div>
+
         )}
       </div>
     </DashboardLayout>
