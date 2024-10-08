@@ -12,4 +12,5 @@ export type Product = {
   suppliers: string[];
   status: string;
   description?: string; // Make this optional if not all products will have a description
+  price: number; 
 };
